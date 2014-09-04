@@ -33,7 +33,7 @@ Copy lib/drupal.js and lib/field.js into your app/lib/ folder.
 Configure the client for your installation of Drupal+Services. <i>Note that the URL includes the trailing slash.</i>
 
 ```javascript
-var Drupal = require('drupal');
+var Drupal = require('drupal-client');
 var drupal = new Drupal();
 
 drupal.setRestPath("http://mywebsite.com/", "rest_endpoint");
@@ -147,7 +147,7 @@ var node = {
   field_integer: drupal.field.structureField(4),
   field_multiple: drupal.field.structureField(["one", "two", "three"]),
   field_file: drupal.field.structureField(fid, "fid"),
-  field_date: field.structureField(new Date())
+  field_date: drupal.field.structureField(new Date())
 };
 
 drupal.createNode(node,
